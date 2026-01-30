@@ -148,27 +148,27 @@ app.use("/",userRouter);
           //  }
         //});
 
-        await listing.save();
-        res.send("Listing added successfully");
-    } catch (err) {
-        console.error(err);
-        res.status(500).send(err.message);
-    }
-});
+   //     await listing.save();
+    //    res.send("Listing added successfully");
+   // } catch (err) {
+    //    console.error(err);
+     //   res.status(500).send(err.message);
+   // }
+//});
 
 
-        await listing.save();
-        res.send("Listing added successfully");
-    } catch (err) {
-        console.error(err);
-        res.status(500).send(err.message);
-    }
-});
+    //    await listing.save();
+    //    res.send("Listing added successfully");
+  //  } catch (err) {
+   //     console.error(err);
+   //     res.status(500).send(err.message);
+  //  }
+//});
 
 
-    await listing.save();
-    res.send("Listing added successfully");
-});
+ //   await listing.save();
+ //   res.send("Listing added successfully");
+//});
 
 
 app.all("*", (req, res, next) => {
