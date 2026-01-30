@@ -122,17 +122,27 @@ app.use("/",userRouter);
 // })
 
 app.get("/testListing", async (req, res) => {
-    const listing = new Listing({
-        title: "Test Villa",
-        description: "Test description",
-        price: 5000,
-        location: "Goa",
-        country: "India",
-        image: {
-            filename: "testimage",
-            url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511"
-        }
-    });
+    try {
+        const listing = new Listing({
+            title: "Test Villa",
+            description: "Test description",
+            price: 5000,
+            location: "Goa",
+            country: "India",
+            image: {
+                filename: "testimage",
+                url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+            }
+        });
+
+        await listing.save();
+        res.send("Listing added successfully");
+    } catch (err) {
+        console.error(err);
+        res.status(500).send(err.message);
+    }
+});
+
 
     await listing.save();
     res.send("Listing added successfully");
