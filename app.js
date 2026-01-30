@@ -131,6 +131,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).send(message);
 });
 
-app.listen("8080", (req, res) => {
-    console.log("App is listening on port 8080");
+const PORT = process.env.PORT || 8080;  // use Render's dynamic port, fallback 8080 locally
+app.listen(PORT, () => {
+  console.log(`App is listening on port ${PORT}`);
 });
