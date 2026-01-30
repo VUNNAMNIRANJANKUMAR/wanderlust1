@@ -16,7 +16,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user.js');
-const Listing = require("./models/listing.js");
+//const Listing = require("./models/listing.js");
 const dbUrl=process.env.ATLASDB_URL
 const listingRouter = require("./routes/listings.js");
 const reviewRouter = require("./routes/reviews.js");
@@ -134,19 +134,19 @@ app.use("/",userRouter);
        //     }
      //   });
 
-app.get("/testListing", async (req, res) => {
-    try {
-        const listing = new Listing({
-            title: "Test Villa",
-            description: "Test description",
-            price: 5000,
-            location: "Goa",
-            country: "India",
-            image: {
-                filename: "testimage",
-                url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511"
-            }
-        });
+//app.get("/testListing", async (req, res) => {
+  //  try {
+    //    const listing = new Listing({
+      //      title: "Test Villa",
+        //    description: "Test description",
+          //  price: 5000,
+            //location: "Goa",
+        //    country: "India",
+       //     image: {
+        //        filename: "testimage",
+          //      url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+          //  }
+        //});
 
         await listing.save();
         res.send("Listing added successfully");
